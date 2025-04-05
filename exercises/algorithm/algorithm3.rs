@@ -3,11 +3,19 @@
 	This problem requires you to implement a sorting algorithm
 	you can use bubble sorting, insertion sorting, heap sorting, etc.
 */
-// I AM NOT DONE
 
-fn sort<T>(array: &mut [T]){
+fn sort<T:Copy+Ord>(array: &mut [T]){
 	//TODO
+    while !array.is_sorted(){
+        let mut p=0;
+        while p<array.len()-1{
+            if  array[p]>=array[p+1]{ array.swap(p+1,p); }
+            p+=1;
+        }
+    }
+    
 }
+
 #[cfg(test)]
 mod tests {
     use super::*;

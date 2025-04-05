@@ -2,7 +2,9 @@
 	single linked list merge
 	This problem requires you to merge two ordered singly linked lists into one ordered singly linked list
 */
-// I AM NOT DONE
+mod algorithm2;
+mod algorithm3;
+mod algorithm4;
 
 use std::fmt::{self, Display, Formatter};
 use std::ptr::NonNull;
@@ -22,6 +24,7 @@ impl<T> Node<T> {
         }
     }
 }
+
 #[derive(Debug)]
 struct LinkedList<T> {
     length: u32,
@@ -69,14 +72,41 @@ impl<T> LinkedList<T> {
             },
         }
     }
-	pub fn merge(list_a:LinkedList<T>,list_b:LinkedList<T>) -> Self
+	pub fn merge(mut list_a:LinkedList<T>,mut list_b:LinkedList<T>) -> Self
+    where T: Ord+Copy
 	{
-		//TODO
-		Self {
-            length: 0,
-            start: None,
-            end: None,
+        let mut head:LinkedList<T> = LinkedList::new();
+        let mut i=0i32;
+        let mut j =0i32;
+        while i<list_a.length as i32 && j<list_b.length as i32 {
+            let (Some(a),Some(b))=(list_a.get(i),list_b.get(j)) else { todo!() };
+            // if *a<*b {
+            if unsafe{*a<*b} {
+                head.add(*a);
+                i+=1;
+            }else{
+                head.add(*b);
+                j+=1;
+            }
         }
+
+        while i<list_a.length as i32{
+            let a=list_a.get(i).unwrap();
+            head.add(*a);
+            i+=1;
+        }
+        while j<list_b.length as i32{
+            let a=list_b.get(j).unwrap();
+            head.add(*a);
+            j+=1;
+        }
+		//TODO
+        head
+		// Self {
+        //     length: 0,
+        //     start: None,
+        //     end: None,
+        // }
 	}
 }
 
