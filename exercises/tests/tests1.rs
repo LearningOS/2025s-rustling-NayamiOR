@@ -10,6 +10,9 @@
 // Execute `rustlings hint tests1` or use the `hint` watch subcommand for a
 // hint.
 
+mod tests5;
+mod tests6;
+// mod tests7;
 
 #[cfg(test)]
 mod tests {
