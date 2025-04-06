@@ -5,6 +5,12 @@
 mod algorithm2;
 mod algorithm3;
 mod algorithm4;
+mod algorithm5;
+mod algorithm6;
+mod algorithm7;
+mod algorithm8;
+mod algorithm9;
+mod algorithm10;
 
 use std::fmt::{self, Display, Formatter};
 use std::ptr::NonNull;
