@@ -2,19 +2,20 @@
 	single linked list merge
 	This problem requires you to merge two ordered singly linked lists into one ordered singly linked list
 */
-mod algorithm2;
-mod algorithm3;
-mod algorithm4;
-mod algorithm5;
-mod algorithm6;
-mod algorithm7;
-mod algorithm8;
-mod algorithm9;
-mod algorithm10;
+// mod algorithm2;
+// mod algorithm3;
+// mod algorithm4;
+// mod algorithm5;
+// mod algorithm6;
+// mod algorithm7;
+// mod algorithm8;
+// mod algorithm9;
+// mod algorithm10;
 
 use std::fmt::{self, Display, Formatter};
 use std::ptr::NonNull;
 use std::vec::*;
+
 
 #[derive(Debug)]
 struct Node<T> {
@@ -106,13 +107,7 @@ impl<T> LinkedList<T> {
             head.add(*a);
             j+=1;
         }
-		//TODO
         head
-		// Self {
-        //     length: 0,
-        //     start: None,
-        //     end: None,
-        // }
 	}
 }
 
